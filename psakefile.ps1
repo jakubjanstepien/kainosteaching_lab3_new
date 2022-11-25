@@ -16,8 +16,8 @@ Properties {
 }
 
 Task compose -depends build, tf_destroy
-Task build -depends clean, code_analysis, tf_init, tf_plan, tf_apply, tf_output
-# Task build -depends clean, tf_init, tf_plan, tf_apply, tf_output
+# Task build -depends clean, code_analysis, tf_init, tf_plan, tf_apply, tf_output
+Task build -depends clean, tf_init, tf_plan, tf_apply, tf_output
 Task code_analysis -depends run_tfsec
 Task deploy -depends tf_apply
 Task publish {
