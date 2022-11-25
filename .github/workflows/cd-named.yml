@@ -33,7 +33,7 @@ jobs:
           echo "RELEASE_VERSION=$(echo "${{ steps.tag_version.outputs.new_tag }}")" >> $GITHUB_ENV
         shell: bash
       - name: build.ps1 init
-      #   run: ./build.ps1 init ${{ steps.tag_version.outputs.new_tag }} ci
+        run: ./build.ps1 init ${{ steps.tag_version.outputs.new_tag }} ci
       # - name: build.ps1 compose
       #   run: ./build.ps1 compose ${{ steps.tag_version.outputs.new_tag }} ci
       - name: build.ps1 publish
